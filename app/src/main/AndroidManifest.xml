@@ -1,74 +1,76 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-          xmlns:tools="http://schemas.android.com/tools"
-          package="substratum.earth.OsToolkit"
-          android:installLocation="internalOnly">
+	xmlns:tools="http://schemas.android.com/tools"
+	package="substratum.earth.OsToolkit"
+	android:installLocation="internalOnly">
 
-    <uses-permission android:name="com.android.vending.CHECK_LICENSE"/>
-    <uses-permission android:name="android.permission.INTERNET" />
-	
+	<uses-permission android:name="com.android.vending.CHECK_LICENSE" />
+	<uses-permission android:name="android.permission.INTERNET" />
+
 	<uses-feature
-        android:name="projekt.substratum.earth"
-        android:required="false" /> <!-- Set to true for OMS-rom only block to be enabled -->
+		android:name="projekt.substratum.earth"
+		android:required="false" />
 
-    <application
-        android:allowBackup="false"
-        android:icon="@mipmap/ic_launcher"
-        android:label="@string/ThemeName"
-        android:supportsRtl="true"
-        android:theme="@style/DialogStyle"
-        tools:node="replace"
-        tools:ignore="GoogleAppIndexingWarning"
-        android:extractNativeLibs="false">
+	<!-- Set to true for OMS-rom only block to be enabled -->
+	<application
+		android:allowBackup="false"
+		android:extractNativeLibs="false"
+		android:icon="@mipmap/ic_launcher"
+		android:label="@string/ThemeName"
+		android:supportsRtl="true"
+		android:theme="@style/DialogStyle"
+		tools:ignore="GoogleAppIndexingWarning"
+		tools:node="replace">
+		<activity android:name=".SubstratumLauncher">
+			<intent-filter>
+				<action android:name="projekt.substratum.THEME" />
 
-        <activity android:name="substratum.earth.OsToolkit.SubstratumLauncher">
-            <intent-filter>
-                <action android:name="projekt.substratum.THEME"/>
-                <category android:name="android.intent.category.DEFAULT"/>
-            </intent-filter>
-            <intent-filter>
-                <action android:name="projekt.substratum.lite.THEME"/>
-                <category android:name="android.intent.category.DEFAULT"/>
-            </intent-filter>
-            <intent-filter>
-                <action android:name="projekt.substratum.GET_KEYS" />
-                <category android:name="android.intent.category.DEFAULT" />
-            </intent-filter>
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN"/>
-            </intent-filter>
-        </activity>
+				<category android:name="android.intent.category.DEFAULT" />
+			</intent-filter>
+			<intent-filter>
+				<action android:name="projekt.substratum.lite.THEME" />
 
-        <meta-data
-            android:name="Substratum_Legacy"
-            android:value="@bool/ThemeSupportLegacy"/>
-        <meta-data
-            android:name="Substratum_Name"
-            android:value="@string/ThemeName"/>
-        <meta-data
-            android:name="Substratum_Author"
-            android:value="@string/ThemeAuthor"/>
-        <meta-data
-            android:name="Substratum_Email"
-            android:value="@string/ThemeAuthorEmail"/>
-        <meta-data
-            android:name="Substratum_Samsung"
-            android:value="@bool/ThemeSupportSamsung"/>
-        <meta-data
-            android:name="Substratum_Wallpapers"
-            android:value="@string/ThemeWallpaperSource"/>
-        <meta-data
-            android:name="Substratum_HeroOverride"
-            android:value="@string/ThemeHeroOverride"/>
+				<category android:name="android.intent.category.DEFAULT" />
+			</intent-filter>
+			<intent-filter>
+				<action android:name="projekt.substratum.GET_KEYS" />
 
-        <!-- SUBSTRATUM INTERNAL USE: DO NOT TOUCH -->
-        <meta-data
-            android:name="Substratum_Plugin"
-            android:value="14.0.2"/>
-        <meta-data
-            android:name="Substratum_Encryption"
-            android:value="@string/encryption_status"/>
+				<category android:name="android.intent.category.DEFAULT" />
+			</intent-filter>
+			<intent-filter>
+				<action android:name="android.intent.action.MAIN" />
+			</intent-filter>
+		</activity>
 
-    </application>
+		<meta-data
+			android:name="Substratum_Legacy"
+			android:value="@bool/ThemeSupportLegacy" />
+		<meta-data
+			android:name="Substratum_Name"
+			android:value="@string/ThemeName" />
+		<meta-data
+			android:name="Substratum_Author"
+			android:value="@string/ThemeAuthor" />
+		<meta-data
+			android:name="Substratum_Email"
+			android:value="@string/ThemeAuthorEmail" />
+		<meta-data
+			android:name="Substratum_Samsung"
+			android:value="@bool/ThemeSupportSamsung" />
+		<meta-data
+			android:name="Substratum_Wallpapers"
+			android:value="@string/ThemeWallpaperSource" />
+		<meta-data
+			android:name="Substratum_HeroOverride"
+			android:value="@string/ThemeHeroOverride" />
+
+		<!-- SUBSTRATUM INTERNAL USE: DO NOT TOUCH -->
+		<meta-data
+			android:name="Substratum_Plugin"
+			android:value="14.0.2" />
+		<meta-data
+			android:name="Substratum_Encryption"
+			android:value="@string/encryption_status" />
+	</application>
 
 </manifest>
