@@ -29,7 +29,7 @@ android {
         applicationId "substratum.earth.OsToolkit"
         // We are only supporting Nougat and above, all new changes will incorporate Nougat changes
         // to the substratum repo rather than anything lower. Keep targetSdkVersion the same.
-        minSdkVersion 24
+        minSdkVersion 23
         // Both versions must be changed to increment on Play Store/user's devices
         versionCode 100
         versionName "1.0.0"
